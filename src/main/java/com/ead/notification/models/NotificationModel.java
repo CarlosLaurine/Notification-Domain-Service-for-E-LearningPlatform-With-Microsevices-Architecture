@@ -63,9 +63,8 @@ public class NotificationModel implements Serializable {
         return creationDate;
     }
 
-    @PrePersist
-    public void setCreationDate() {
-        this.creationDate = LocalDateTime.now();
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 
     public NotificationStatus getNotificationStatus() {
