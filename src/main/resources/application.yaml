@@ -31,6 +31,15 @@ spring:
   rabbitmq:
     addresses: amqps://pbnubozr:xM3lGCUyQzjF_kfiTtyGBRbHJgDa_W8N@jackal.rmq.cloudamqp.com/pbnubozr
 
+ead:
+  broker:
+    exchange:
+      notificationCommandExchange: ead.notificationcommand
+    queue:
+      notificationCommandQueue:
+        name: ead.notificationcommand.ms.notification
+    key:
+      notificationCommandKey: ms.notification
 
 logging:
   level:
