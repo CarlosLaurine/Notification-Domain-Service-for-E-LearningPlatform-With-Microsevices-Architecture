@@ -24,4 +24,14 @@ public class NotificationServiceImpl implements NotificationService {
     public NotificationModel saveNotification(NotificationModel notificationModel) {
         return notificationRepository.save(notificationModel);
     }
+
+    @Override
+    public Page<NotificationModel> findAllNotificationsByUser(UUID userId, Pageable pageable) {
+        return notificationRepository.findAllByUserIdAndNotificationStatus(userId, NotificationStatus.CREATED, pageable);
+    }
+
+    @Override
+    public Optional<NotificationModel> findByNotificationIdAndUserId(UUID notificationId, UUID userId) {
+        return notificationRepository.findByUserIdAndNotificationId(userId,notificationId);
+    }
 }
